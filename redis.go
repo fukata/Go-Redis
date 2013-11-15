@@ -499,6 +499,15 @@ type AsyncClient interface {
 	// Redis ZRANGEBYSCORE command.
 	Zrangebyscore(key string, arg1 float64, arg2 float64) (result FutureBytesArray, err Error)
 
+    // Redis HGET command.
+    Hget(arg0 string, arg1 string) (result FutureBytes, err Error)
+
+    // Redis HSET command.
+    Hset(arg0 string, arg1 string, arg2 []byte) (stat FutureBool, err Error)
+
+    // Redis HGETALL command.
+    Hgetall(arg0 string) (result FutureBytes, err Error)
+
 	// Redis FLUSHDB command.
 	Flushdb() (status FutureBool, err Error)
 
