@@ -881,7 +881,7 @@ func (c *asyncClient) Hgetall(arg0 string) (result FutureBytesArray, err Error) 
 	var resp *PendingResponse
 	resp, err = c.conn.QueueRequest(&HGETALL, [][]byte{arg0bytes})
 	if err == nil {
-		result = resp.future.(FutureBytes)
+		result = resp.future.(FutureBytesArray)
 	}
 	return result, err
 
