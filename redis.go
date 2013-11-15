@@ -506,7 +506,7 @@ type AsyncClient interface {
     Hset(arg0 string, arg1 string, arg2 []byte) (stat FutureBool, err Error)
 
     // Redis HGETALL command.
-    Hgetall(arg0 string) (result FutureBytes, err Error)
+    Hgetall(arg0 string) (result FutureBytesArray, err Error)
 
 	// Redis FLUSHDB command.
 	Flushdb() (status FutureBool, err Error)
